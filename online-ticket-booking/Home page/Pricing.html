@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+
+    <!-- fontawesome link  -->
+    <script src="https://kit.fontawesome.com/47665aa912.js" crossorigin="anonymous"></script>
+
+    <!-- bootstrap link  -->
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    
+     <!-- css link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Css -->
+    <style>
+        .highlighted-card{
+             border-radius: 30px !important;
+             color: white;
+             box-shadow: 0px 42px 34px rgba(63, 135, 245, 0.25);
+        }
+        .frequently{
+          margin-bottom: 10%;
+        }
+  
+  </style>
+  
+  
+  </head>
+  <body>
+
+  <!------------
+    navbar
+  -------------->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light Routes-color">
+        <div class="container ">
+          <a class="navbar-brand fw-bolder fs-3" href="index.html">Online Ticket Booking </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold navit">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="reserve.html">Booking</a>
+              </li>
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="my-booking.html">My Booking</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Pricing.html">Pricing</a>
+              </li>
+             
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contactus.html">Contact</a>
+              </li>
+                          
+            </ul>
+            <form class="d-flex">
+              <div id="sign_in" >
+                <div class="d-flex">
+                  <button class="btn btn-outline-success " type="submit"><a class="nav-link active register" aria-current="page" href="regland.html">Register</a></button>
+    
+                  <!-- Login work  -->
+                  <button class="btn btn-outline-success mx-2" type="submit"><a class="nav-link active  register" aria-current="page" href="login.html">Login</a></button>
+                </div>
+                 
+                  
+              </div>
+                  <!-- Register work  -->
+          <!-- Register work  -->
+          <div id="signOut" >
+            <div class="d-flex ">
+              <p id="userName" class="user-name"></p>
+            <!-- Login work  -->
+            <button onclick="handleLogOut()" class="logout-btn" type="button"><a class="log-out" aria-current="page">Logout</a></button>
+            </div>
+          </div>
+                </form>
+            
+          </div>
+
+        </div>
+      </nav>
+</header>
+<script>
+  const getUserInfo = () => {
+  const userInfo = localStorage.getItem("user");
+  const user = JSON.parse(userInfo);
+  console.log("user :", user);
+  if (user) {
+    document.getElementById("signOut").style.display = "block";
+    document.getElementById("sign_in").style.display = "none";
+    document.getElementById("userName").innerText = user.name;
+  } else {
+    document.getElementById("sign_in").style.display = "block";
+    document.getElementById("signOut").style.display = "none";
+  }
+};
+getUserInfo();
+
+const handleLogOut = () => {
+  localStorage.removeItem("user");
+  document.getElementById("signOut").style.display = "none";
+  document.getElementById("sign_in").style.display = "block";
+};
+
+</script>
+
+
+
+
+    <!-- Pricing (card part)  -->
+    
+    
+    <section class="container">
+      <div class="text-center p-5">
+        <h1>Pricing</h1>
+        </div>
+        <div class="card-group ">
+          <!-- card-1 -->
+          <div class="card border-0 mx-3">              
+            <div class="card-body">
+              <h2>Starter</h2>
+                <div >
+                   <h1 class="card-title">£ 0.97</h5>
+                </div>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> 1 Website</li>
+                    <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> 5GB Web Space</li>
+                    <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i>  Unlimited Visitors</li>
+                    <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> 5GB Bandwidth</li>
+                    <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> 1 Database</li>
+                    <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> Free SSL Certificate</li>
+                </ul>                
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <button class="admin-btn btn-primary rounded-pill  w-75 d-block mx-auto">Start Now</button> 
+              </div>
+            </div>
+            <!-- card-2 -->
+            <div class="card border-0 mx-3">              
+                <div class="card-body">
+                    <h2>Expansion</h2>
+                  <div >
+                     <h1 class="card-title">£ 1.75</h5>
+                  </div>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <ul class="list-unstyled">
+                      <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> 2 Website</li>
+                      <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> 50GB Web Space</li>
+                      <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i>  Unlimited Visitors</li>
+                      <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> 100GB Bandwidth</li>
+                      <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> 5 Database</li>
+                      <li><i class="fas fa-check rounded-circle bg-primary p-1 my-2"></i> Free SSL Certificate</li>
+                  </ul>                
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="admin-btn btn-primary rounded-pill  w-75 d-block mx-auto">Start Now</button> 
+                </div>
+              </div>
+              <!-- card-3 -->
+            <div class="card border-0 mx-3 bg-primary px-3 py-4 highlighted-card">              
+                <div class="card-body">
+                    <h2>Metropolis</h2>
+                  <div >
+                     <h1 class="card-title">£ 4.99</h5>
+                  </div>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <ul class="list-unstyled">
+                      <li><i class="fas fa-check rounded-circle bg-dark  p-1 my-2 "></i> Unlimited Websites</li>
+                      <li><i class="fas fa-check rounded-circle bg-dark p-1 my-2"></i> Unlimited Web Space</li>
+                      <li><i class="fas fa-check rounded-circle bg-dark  p-1 my-2"></i>  Unlimited Visitors
+                      </li>
+                      <li><i class="fas fa-check rounded-circle bg-dark  p-1 my-2"></i> Unlimited Bandwidth</li>
+                      <li><i class="fas fa-check rounded-circle bg-dark  p-1 my-2"></i> Unlimited Databases</li>
+                      <li><i class="fas fa-check rounded-circle bg-dark  p-1 my-2"></i> Free SSL Certificate</li>
+                  </ul>                
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="admin-btn btn-light text-primary rounded-pill  w-75 d-block mx-auto card3-start">Start Now</button> 
+                </div>
+              </div>
+
+            
+        </div>  
+          
+    </section>
+
+
+
+    <!-- Frequently Asked Questions  -->
+    <!-- <div class="container">
+      
+         
+    </div> -->
+
+
+    <section>
+      <div class="container frequently">
+        <div class="text-center p-5 my-5">
+          <h1>Frequently Asked Questions</h1>
+        </div>
+        <div>
+          <div>               
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item Questions-works">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h5 class="Questions">What is Plesk?</h5>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Plesk is an easy-to-use, end-user control panel that simplifies the management of your website. It is used to build, secure and run websites/applications in the cloud and is included as standard in all of our web hosting packages.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item Questions-works">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h5 class="Questions">Is Your hosting safe?</h5>
+                  </button>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Yes, our servers are protected 24/7, with a real time anti-malware scanner. We also take regular backups.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item Questions-works">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h5 class="Questions">What is SSL certificate</h5>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    SSL is an abbreviation for Secure Sockets Layers, which is a global standard for encrypting communication between a browser and a web server. Most search engines requires you to have an SSL certificate for optimum SEO.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item Questions-works">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <h5 class="Questions">Can I use an external domain ?</h5>
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Yes, we allow you to use an external domain on any of our packages. This means that you can register a domain elsewhere and still enjoy our super fast hosting.</div>
+                </div>
+              </div>
+
+              <div class="accordion-item Questions-works">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <h5 class="Questions">Do you offer support ?</h5>
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Absolutely! We ensure that our support team are always on hand to answer to any questions you may have. We provide a 24/7 support team covereage, so no matter where your location or time, we're here to help.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+     
+      </div>
+    </section>
+
+
+    <!----------------------------------------------------------footer---------------------------------------------------------------------->
+
+    <main>
+      <div class="Container">
+          <footer class="">
+              <div class="footer">
+                  <span class="Influencer">Online Ticket Booking </span> <br> <a href="https://www.codingnepalweb.com">Copyright </a><span class="far fa-copyright"></span>  2022  Online Ticket Booking <br>
+                  <span>All rights reserved</span><br>
+                  <div class="footer-icon">
+                      <a href=""><i class="fab fa-facebook"></i></a>
+                      <a href=""><i class="fab fa-instagram"></i></a>
+                      <a href=""><i class="fab fa-youtube-square"></i></a>
+                      <a href=""><i class="fab fa-twitter"></i></a>
+                  </div>
+                  <div class="get-app">
+                    <h5>Get The App</h3>
+                      <div>
+                        <a href="">
+                          <img src="images/App-logo/App Store Badge.png" alt="">
+                          <img src="images/App-logo/Google play.png" alt="">
+                        </a>
+                      </div>
+                  </div>
+              </div>
+          </footer> 
+      </div>
+  </main> 
+  <!-----------------------------------------------------footerDone----------------------------------------------------->
+
+
+    <!-- js link  -->
+    <script src="Js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

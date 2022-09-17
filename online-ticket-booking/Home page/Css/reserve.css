@@ -1,0 +1,92 @@
+.signup-form{
+    height:500px;
+    width:600px;
+    margin-top:10%;
+    margin-left:25%;
+    margin-bottom:10%;
+    
+}
+/* .robin{
+    background-image:linear-gradient(rgba(70, 3, 3, 0.5),rgba(48, 34, 34, 0.5)), url(bg.jpg);
+    background-size: cover;
+     background-attachment: fixed;
+} */
+.ticket{
+    margin-top: 5%;
+}
+.Signup-head{
+    padding:8px;
+}
+.signup-content .radio{
+    margin:10px 10px;
+}
+.signup-content2 .input{
+    width:400px;
+    padding:10px;
+    margin:10px;
+    color:#fff;
+}
+.signup-content2 .tarikh{
+    margin:10px;
+    padding:10px;
+    color:#fff;
+}
+.signup-content2  .person{
+    padding:10px;
+    margin:10px;
+    color:#fff;
+}
+.signup-content2 .travel{
+    margin:20px 20px;
+}
+.signup-content2 .travel2{
+    padding:5px;
+}
+.signup-content2 .submit-btn{
+    border:none;
+    outline:none;
+    width:200px;
+    padding:10px;
+    margin-left:10px;
+    margin-top: 20px;
+}
+.submit-btn:hover{
+    background-color: #bdc3c7;
+}
+
+.color{
+    background-color: #a4b0be;
+}
+
+
+
+
+
+/* Mobile Devices */
+@media (max-width: 576px){
+    .signup-form{
+        height:800px;
+        width:600px;
+        margin-top:5%;
+        margin-left:25%;
+        margin-bottom: 5%;
+    }
+    .signup-content2 .input{
+        width:300px;
+        padding:10px;
+        margin:10px;
+        color:#fff;
+    }
+    
+}
+
+/* Tablet Devices */
+@media (min-width:576px) and (max-width:992px){
+    .signup-form{
+        height:600px;
+        width:600px;
+        margin-top:10px;
+        margin-left:25%;
+        
+    }
+}

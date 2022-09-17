@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- css link -->
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="css/login-landing-page.css">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+</head>
+<body>
+  
+  <!------------
+    navbar
+  -------------->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light Routes-color">
+        <div class="container ">
+          <a class="navbar-brand fw-bolder fs-3" href="index.html">Online Ticket Booking </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold navit">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="reserve.html">Booking</a>
+              </li>
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="my-booking.html">My Booking</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Pricing.html">Pricing</a>
+              </li>
+             
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contactus.html">Contact</a>
+              </li>
+                          
+            </ul>
+            <form class="d-flex">
+              <div id="sign_in" >
+                <div class="d-flex">
+                  <button class="btn btn-outline-success " type="submit"><a class="nav-link active register" aria-current="page" href="regland.html">Register</a></button>
+    
+                  <!-- Login work  -->
+                  <button class="btn btn-outline-success mx-2" type="submit"><a class="nav-link active  register" aria-current="page" href="login.html">Login</a></button>
+                </div>
+                 
+                  
+              </div>
+                  <!-- Register work  -->
+          <div id="signOut" >
+            <div class="d-flex ">
+              <p id="userName" class="pt-2 px-2 text-danger"></p>
+            <!-- Login work  -->
+            <button onclick="handleLogOut()" class="btn btn-outline-success mx-2 bg-warning" type="button"><a class="" aria-current="page">Logout</a></button>
+            </div>
+          </div>
+                </form>
+            
+          </div>
+
+        </div>
+      </nav>
+</header>
+<script>
+  const getUserInfo = () => {
+  const userInfo = localStorage.getItem("user");
+  const user = JSON.parse(userInfo);
+  console.log("user :", user);
+  if (user) {
+    document.getElementById("signOut").style.display = "block";
+    document.getElementById("sign_in").style.display = "none";
+    document.getElementById("userName").innerText = user.name;
+  } else {
+    document.getElementById("sign_in").style.display = "block";
+    document.getElementById("signOut").style.display = "none";
+  }
+};
+getUserInfo();
+
+const handleLogOut = () => {
+  localStorage.removeItem("user");
+  document.getElementById("signOut").style.display = "none";
+  document.getElementById("sign_in").style.display = "block";
+};
+
+</script>
+
+<div class="bg-img">
+  <div class="content">
+    <header>Secure Client Login</header>
+    <p>This page is restricted</p>
+    <br> <br>
+   
+    <form action="#">
+      <div class="field">
+        <span class="fa fa-user"></span>
+        <input type="text" id="email" required placeholder="Email or Phone">
+      </div>
+      <div class="field space">
+        <span class="fa fa-lock"></span>
+        <input type="password" id="password" class="pass-key" required placeholder="Password">
+        <span class="show">SHOW</span>
+      </div>
+      <div class="pass">
+        <a href="#">Forgot Password?</a>
+      </div>
+      <br>
+      <div class="field">
+        <input type="submit" id="LOGIN" value="LOGIN">
+      </div>
+    </form>
+    <div class="login">Or Sign in with</div>
+    <div class="links">
+      <div class="facebook">
+        <i class="fab fa-facebook-f"><span  id="facebook">Facebook</span><a href="#"></a></i>
+      </div>
+      <div class="google">
+        <i class="fab fa-google"><span id="google">Google</span><a href="#"></a></i>
+      </div>
+    </div>
+    <div class="signup">Don't have an account?
+      <a href="regland.html">Signup Now</a>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+    import { getDatabase,set,ref,update } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword,signInWithPopup,GoogleAuthProvider,FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+
+  const firebaseConfig = {
+      apiKey: "AIzaSyBhPviDmNoD8YT3Oihcd1hRe7jNy0fJlMg",
+      authDomain: "registration-67a14.firebaseapp.com",
+      projectId: "registration-67a14",
+      storageBucket: "registration-67a14.appspot.com",
+      messagingSenderId: "190019790529",
+      appId: "1:190019790529:web:fce7785653676bff349640"
+    };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database=getDatabase(app);
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider(app);
+  const provider1 = new FacebookAuthProvider(app);
+  const LOGIN =document.getElementById("LOGIN"); 
+
+  LOGIN.addEventListener('click',(e) =>{
+    e.preventDefault()
+      var email=document.getElementById('email').value;
+      var password=document.getElementById('password').value;
+   
+      
+signInWithEmailAndPassword(auth, email, password)
+  .then(( 
+
+    userCredential
+    ) => {
+    // const credential = GoogleAuthProvider.credentialFromResult(result);
+    // const token = credential.accessToken;
+    // // Signed in 
+     const user = userCredential.user;
+     localStorage.setItem("user",JSON.stringify({name:user.displayName,
+          email:user.email}))
+  alert(user.displayName);
+console.log("user",user);
+  window.history.pushState("", "", "/");
+  location.reload();
+
+  var lgDate = new Date();
+     update(ref(database, 'users/'+user.uid),{
+     
+      last_login:lgDate
+  })
+
+
+ })
+
+ .catch((error) => {
+ const errorCode = error.code;
+ const errorMessage = error.message;
+  alert('email or password incorrect');
+
+ });
+
+
+ 
+});
+google.addEventListener('click',(e) =>{
+
+signInWithPopup(auth, provider)
+.then((result) => {
+// This gives you a Google Access Token. You can use it to access the Google API.
+const credential = GoogleAuthProvider.credentialFromResult(result);
+const token = credential.accessToken;
+// The signed-in user info.
+const user = result.user;
+alert(user.displayName);
+localStorage.setItem("user",JSON.stringify({name:user.displayName,
+          email:user.email}))
+
+  window.history.pushState("", "", "/");
+  location.reload();
+// ...
+}).catch((error) => {
+// Handle Errors here.
+const errorCode = error.code;
+const errorMessage = error.message;
+// The email of the user's account used.
+const email = error.email;
+// The AuthCredential type that was used.
+const credential = GoogleAuthProvider.credentialFromError(error);
+// ...
+alert (errorMessage);
+});
+})
+ 
+  // .catch((error) => {
+  //   const errorCode = error.code;
+  //   const errorMessage = error.message;
+  // });
+  facebook.addEventListener('click',(e) =>{signInWithPopup(auth, provider1)
+  .then((result) => {
+    // The signed-in user info.
+    const user = result.user;
+
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+    localStorage.setItem("user",JSON.stringify({name:user.displayName,
+          email:user.email}))
+
+  window.history.pushState("", "", "/");
+  location.reload();
+
+    // ...
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = FacebookAuthProvider.credentialFromError(error);
+
+    // ...
+  });
+})
+
+</script>
+
+
+<!----------------------------------------------------------footer---------------------------------------------------------------------->
+
+<main>
+  <div class="Container">
+      <footer class="">
+          <div class="footer">
+              <span class="Influencer">Online Ticket Booking </span> <br> <a href="https://www.codingnepalweb.com">Copyright </a><span class="far fa-copyright"></span>  2022  Online Ticket Booking <br>
+              <span>All rights reserved</span><br>
+              <div class="footer-icon">
+                  <a href=""><i class="fab fa-facebook"></i></a>
+                  <a href=""><i class="fab fa-instagram"></i></a>
+                  <a href=""><i class="fab fa-youtube-square"></i></a>
+                  <a href=""><i class="fab fa-twitter"></i></a>
+              </div>
+              <div class="get-app">
+                <h5>Get The App</h3>
+                  <div>
+                    <a href="">
+                      <img src="images/App-logo/App Store Badge.png" alt="">
+                      <img src="images/App-logo/Google play.png" alt="">
+                    </a>
+                  </div>
+              </div>
+          </div>
+      </footer> 
+  </div>
+</main> 
+<!-----------------------------------------------------footerDone----------------------------------------------------->
+
+
+
+<!-- js link  -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration For Signing Up</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="Css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="Css/regstyles.css">
+ 
+</head>
+<body>
+
+  <!------------
+    navbar
+  -------------->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light Routes-color">
+        <div class="container ">
+          <a class="navbar-brand fw-bolder fs-3" href="index.html">Online Ticket Booking </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold navit">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="reserve.html">Booking</a>
+              </li>
+
+             
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="my-booking.html">My Booking</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Pricing.html">Pricing</a>
+              </li>
+             
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contactus.html">Contact</a>
+              </li>
+                          
+            </ul>
+            <form class="d-flex">
+              <div id="sign_in" >
+                <div class="d-flex">
+                  <button class="btn btn-outline-success " type="submit"><a class="nav-link active register" aria-current="page" href="regland.html">Register</a></button>
+    
+                  <!-- Login work  -->
+                  <button class="btn btn-outline-success mx-2" type="submit"><a class="nav-link active  register" aria-current="page" href="login.html">Login</a></button>
+                </div>
+                 
+                  
+              </div>
+                  <!-- Register work  -->
+          <!-- Register work  -->
+          <div id="signOut" >
+            <div class="d-flex ">
+              <p id="userName" class="user-name"></p>
+            <!-- Login work  -->
+            <button onclick="handleLogOut()" class="logout-btn" type="button"><a class="log-out" aria-current="page">Logout</a></button>
+            </div>
+          </div>
+                </form>
+            
+          </div>
+
+        </div>
+      </nav>
+</header>
+<script>
+  const getUserInfo = () => {
+  const userInfo = localStorage.getItem("user");
+  const user = JSON.parse(userInfo);
+  console.log("user :", user);
+  if (user) {
+    document.getElementById("signOut").style.display = "block";
+    document.getElementById("sign_in").style.display = "none";
+    document.getElementById("userName").innerText = user.name;
+  } else {
+    document.getElementById("sign_in").style.display = "block";
+    document.getElementById("signOut").style.display = "none";
+  }
+};
+getUserInfo();
+
+const handleLogOut = () => {
+  localStorage.removeItem("user");
+  document.getElementById("signOut").style.display = "none";
+  document.getElementById("sign_in").style.display = "block";
+};
+
+</script>
+
+
+
+  
+  <div class="container color">
+    <div class="title">Registration Form</div>  
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" id ="username" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id ="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id="number" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" placeholder="Confirm your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">NID Number</span>
+            <input type="number" placeholder="National ID Card Number" required>
+          </div> <br> <br>
+           
+          <div class="input-box">
+            <span class="details">Permanent Address</span>
+            <input type="text" placeholder="House no;Road no;Vilage" required>
+          </div>
+           
+        
+        </div>
+
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        
+         <div class="inputpr">
+             <input 
+             type="checkbox"
+              value="on"
+               /> I accept the  
+                <a href="https://google.com" style="text-decoration: none;">Terms of Use</a> & 
+                <a href="https://facebook.com" style="text-decoration: none;"> Privacy Policy</a>.
+          </div>
+         
+        
+        <div class="button">
+          <input type="submit" id="Register" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+    import { getDatabase,set,ref } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword,updateProfile } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBhPviDmNoD8YT3Oihcd1hRe7jNy0fJlMg",
+      authDomain: "registration-67a14.firebaseapp.com",
+      projectId: "registration-67a14",
+      storageBucket: "registration-67a14.appspot.com",
+      messagingSenderId: "190019790529",
+      appId: "1:190019790529:web:fce7785653676bff349640"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database=getDatabase(app);
+    const auth = getAuth();
+const Register =document.getElementById("Register");
+    Register.addEventListener('click',(e) =>{
+      e.preventDefault()
+        var email=document.getElementById('email').value;
+        var password=document.getElementById('password').value;
+        var username=document.getElementById('username').value;
+        createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    
+    const user = userCredential.user;
+    updateProfile(auth.currentUser, {
+            displayName: username,
+          })
+    set(ref(database, 'users/'+user.uid),{
+        username: username,
+        email: email
+    })
+  
+   alert('Registration successfully');
+    localStorage.setItem("user",JSON.stringify({name:username,
+          email:user.email}))
+    window.history.pushState("", "", "/");
+  location.reload();
+
+  })
+
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert('Please check your details');
+    // ..
+  });
+    });
+  </script>
+  
+
+
+  <!----------------------------------------------------------footer---------------------------------------------------------------------->
+
+  <main>
+    <div class="Container">
+        <footer class="">
+            <div class="footer">
+                <span class="Influencer">Online Ticket Booking </span> <br> <a href="https://www.codingnepalweb.com">Copyright </a><span class="far fa-copyright"></span>  2022  Online Ticket Booking <br>
+                <span>All rights reserved</span><br>
+                <div class="footer-icon">
+                    <a href=""><i class="fab fa-facebook"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-youtube-square"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="get-app">
+                  <h5>Get The App</h3>
+                    <div>
+                      <a href="">
+                        <img src="images/App-logo/App Store Badge.png" alt="">
+                        <img src="images/App-logo/Google play.png" alt="">
+                      </a>
+                    </div>
+                </div>
+            </div>
+        </footer> 
+    </div>
+</main> 
+<!-----------------------------------------------------footerDone----------------------------------------------------->
+
+
+
+  <!-- js link  -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+</body>
+</html>

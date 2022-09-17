@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contactus</title>
+    <!-- fontawesome link  -->
+    <script src="https://kit.fontawesome.com/47665aa912.js" crossorigin="anonymous"></script>
+
+    
+
+    <!-- css link -->
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/contactus.css">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+
+    
+
+</head>
+<body>
+
+  <!------------
+    navbar
+  -------------->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light Routes-color">
+        <div class="container ">
+          <a class="navbar-brand fw-bolder fs-3" href="index.html">Online Ticket Booking </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold navit">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="reserve.html">Booking</a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="my-booking.html">My Booking</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Pricing.html">Pricing</a>
+              </li>
+             
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contactus.html">Contact</a>
+              </li>
+                          
+            </ul>
+            <form class="d-flex">
+              <div id="sign_in" >
+                <div class="d-flex">
+                  <button class="btn btn-outline-success " type="submit"><a class="nav-link active register" aria-current="page" href="regland.html">Register</a></button>
+    
+                  <!-- Login work  -->
+                  <button class="btn btn-outline-success mx-2" type="submit"><a class="nav-link active  register" aria-current="page" href="login.html">Login</a></button>
+                </div>
+                 
+                  
+              </div>
+                  <!-- Register work  -->
+          <!-- Register work  -->
+          <div id="signOut" >
+            <div class="d-flex ">
+              <p id="userName" class="user-name"></p>
+            <!-- Login work  -->
+            <button onclick="handleLogOut()" class="logout-btn" type="button"><a class="log-out" aria-current="page">Logout</a></button>
+            </div>
+          </div>
+                </form>
+            
+          </div>
+
+        </div>
+      </nav>
+</header>
+<script>
+  const getUserInfo = () => {
+  const userInfo = localStorage.getItem("user");
+  const user = JSON.parse(userInfo);
+  console.log("user :", user);
+  if (user) {
+    document.getElementById("signOut").style.display = "block";
+    document.getElementById("sign_in").style.display = "none";
+    document.getElementById("userName").innerText = user.name;
+  } else {
+    document.getElementById("sign_in").style.display = "block";
+    document.getElementById("signOut").style.display = "none";
+  }
+};
+getUserInfo();
+
+const handleLogOut = () => {
+  localStorage.removeItem("user");
+  document.getElementById("signOut").style.display = "none";
+  document.getElementById("sign_in").style.display = "block";
+};
+
+</script>
+      
+    <section class="contact ">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur a</p>
+
+        </div>
+        <div class="contact-us">
+            <div class="contactInfo">
+                <div class="box">
+                   <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div> 
+                   <div class="text">
+                       <h3>Address</h2>
+                        <p>Kemal Ataturk Road, <br> Dhaka-1200, <br> Bangladesh</p>
+
+                   </div>
+                </div>
+                <div class="box">
+                     <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div> 
+                       <div class="text">
+                        <h3>Phone</h2>
+                         <p>+8801755959595959</p>
+                         
+                        </div>
+                 </div>
+
+                 <div class="box">
+                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div> 
+                    <div class="text">
+                        <h3>Email</h2>
+                         <p> xyz@gmail.com</p>
+                         
+                    </div>
+                 </div>
+            </div>
+
+            <div class="contactform">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="inputbox">
+                        <input type="text" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+
+                    <div class="inputbox">
+                        <textarea required="required"></textarea>
+                        <span>Type Your Message...</span>
+                    </div>
+
+                    <div class="inputbox">
+                        <input type="submit" name="" value="Send">
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+    </section>
+
+
+    <!----------------------------------------------------------footer---------------------------------------------------------------------->
+
+    <main>
+        <div class="Container">
+            <footer class="">
+                <div class="footer">
+                    <span class="Influencer">Online Ticket Booking </span> <br> <a href="https://www.codingnepalweb.com">Copyright </a><span class="far fa-copyright"></span>  2022  Online Ticket Booking <br>
+                    <span>All rights reserved</span><br>
+                    <div class="footer-icon">
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-youtube-square"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="get-app">
+                      <h5>Get The App</h3>
+                        <div>
+                          <a href="">
+                            <img src="images/App-logo/App Store Badge.png" alt="">
+                            <img src="images/App-logo/Google play.png" alt="">
+                          </a>
+                        </div>
+                    </div>
+                </div>
+            </footer> 
+        </div>
+    </main> 
+    <!-----------------------------------------------------footerDone----------------------------------------------------->
+
+
+    <!-- js link  -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>

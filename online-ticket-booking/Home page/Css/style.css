@@ -1,0 +1,508 @@
+/* navbar  */
+
+.navit a:hover{
+   color: #485460 !important ;
+}
+.register{
+  color: black !important;
+  font-weight: bold;
+}
+.logout-btn{
+  border: 2px solid green;
+  border-radius: 9px;
+  background-color: green;
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.logout-btn:hover{
+  color: black;
+  background: white;
+  border: 2px solid rgb(13, 80, 13);
+  border-radius: 9px;
+}
+.log-out{
+  color: white;
+  text-decoration: none;
+  font-weight: 530; 
+}
+.log-out:hover{
+  color: black;
+  
+}
+
+.user-name{
+  color: #164e18;
+  font-weight: 600;
+  font-size: larger;
+  padding: 6px;
+  margin-top: 17px;
+}
+
+
+
+
+/* Section-2 (carousel part) */
+.carousel-item img{
+   height: 70vh ;
+}
+.book:hover{
+  background-color: green;
+}
+
+
+/* ..............................................................slider.............................................................................................  */
+
+.hi-slide{
+   position: relative;
+   width: 754px ;
+   height: 292px;
+   margin: 115px auto 0;
+}
+.hi-slide .hi-next,
+.hi-slide .hi-prev{
+   position: absolute;
+   top: 50%;
+   width: 40px;
+   height: 40px;
+   margin-top:-20px;
+   border-radius: 50px;
+   line-height: 40px;
+   text-align: center;
+   cursor: pointer;
+   background-color: white;
+   color: black;
+   transition: all 0.7s;
+   font-size: 20px;
+   font-weight: bold;
+
+
+}
+
+.hi-slide .hi-next:hover,
+.hi-slide .hi-prev:hover{
+   opacity: 1;
+   background-color: green;
+}
+.hi-slide .hi-prev{
+   left: -60px;
+
+}
+.hi-slide .hi-prev::before{
+   content: '<';
+}
+.hi-slide .hi-next{
+   right: -60px;
+}
+.hi-slide .hi-next::before{
+   content: '>';
+} */
+.hi-slide > ul{
+   list-style: none;
+   position: relative;
+   width: 754px;
+   height: 292px;
+   margin: 0;
+   padding: 0;
+
+}
+.hi-slide > ul > li{
+   overflow: hidden;
+   position: absolute;
+   z-index: 0;
+   left: 377px;
+   top: 147px;
+   width: 0;
+   height: 0;
+   margin: 0;
+   padding: 0;
+   border: 3px solid green;
+   background-color: #333;
+   cursor: pointer;
+}
+ .hi-slide > ul > li > img{
+   width: 100%;
+   height: 100%;
+   background-position: center;
+}
+
+/* ... Slider Done .......................................................................... */
+
+
+/* section -3 Routes */
+
+.Routes-color{
+    background-color: #a4b0be;
+}
+.Routes-alain{
+    margin: 10px 100px;
+    
+}
+.Routes-alain a{
+    margin: 5px;
+    text-align: center;
+}
+
+/* Pricing part  */
+.highlighted-card{
+    border-radius: 30px !important;
+    color: white;
+    box-shadow: 0px 42px 34px rgba(63, 135, 245, 0.25);
+}
+
+
+/* section - 5 (Bank - card works)
+.bank-img-works img{
+    width: 90vh;
+}
+.bank-img-works{
+     text-align: center;
+     margin-bottom: 50px;
+} */
+
+/* dfashdkjiqhsfjasf */
+
+/* ist row */
+hr{
+    border: 1px solid #AAAAAA;
+    margin-bottom: 27px;
+    margin-top: 20px;
+}
+.hr-top{
+    margin-top: 85px;
+}
+
+
+/* some site logo */
+.all-logo {
+    display: flex;
+    justify-content: center;
+}
+.all-logo img{
+    width: 10vh;
+   align-items: center;
+    text-align: center;
+    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+/*---------
+   footer
+-----------*/
+
+.footer{
+    background-color: #a4b0be;
+    color: black;
+    padding: 80px;
+    text-align: center;
+}
+
+.footer a{
+    text-decoration: none;
+    color: black;
+    
+}
+.footer-icon a{
+    margin-top: 15px;
+    margin-left: 35px;
+    font-size: 30px;
+}
+.footer-icon a:hover{
+    color: #485460;
+}
+.Influencer{
+    font-size: 30px;
+}
+.get-app{
+    margin-top: 5px;
+}
+
+
+
+/* ............................................................. Testimonials .................................................... */
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+}
+.testimonials{
+  padding: 40px 0;
+  background: #a4b0be;
+  color: black;
+  text-align: center;
+  margin-bottom: 27px;
+}
+.inner{
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* .border{
+  width: 160px;
+  height: 5px;
+  background:white;
+  margin: 26px auto;
+} */
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.col{
+  flex: 20.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.testimonial{
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+}
+.testimonial img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.name{
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.stars{
+  color: #f5dd07;
+  margin-bottom: 20px;
+}
+
+
+/* ................................................................................................. */
+
+/*----------------
+   Media Queries
+------------------*/
+
+/* Mobile Devices */
+@media (max-width: 576px){
+    .carousel-item img {
+        height: 30vh;
+    }
+    .all-logo img{
+        width: 5vh;
+       align-items: center;
+        text-align: center;
+        margin: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .col{
+        flex: 100%;
+        max-width: 80%;
+      }
+
+      /* Reserve Your Ticket  */
+      .signup-form{
+        height:800px;
+        width:600px;
+        margin-top:30px;
+        margin-left:25%;
+        margin-top:20px;
+    }
+    .signup-content2 .input{
+        width:300px;
+        padding:10px;
+        margin:10px;
+        color:#fff;
+    }
+      
+}
+
+
+
+/*............................................................................... Tablet Devices.......................................................................................................... */
+@media (min-width:576px) and (max-width:992px){
+    .carousel-item img {
+        height: 50vh;
+    }
+    .all-logo img{
+        width: 6vh;
+       align-items: center;
+        text-align: center;
+        margin: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .col{
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  /* Reserve Your Ticket  */
+  @media (min-width:576px) and (max-width:992px){
+    .signup-form{
+        height:600px;
+        width:600px;
+        margin-top:20px;
+        margin-left:25%;
+        margin-bottom: 20px;
+    }
+}
+ 
+}
+
+
+/* 
+/* contactus */
+
+/*domain */
+/* @import url('https://fonts.googleapis.com/css?family=Lato&display=swap'); */
+/* 
+* {
+  box-sizing: border-box;
+} */ 
+
+/* /* body {
+  background-color: #242333;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Lato', 'sans-serif';
+} */
+
+/* .train-container {
+  margin: 20px 0;
+  justify-content:space-between;
+}
+
+.train-container select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.seat {
+  background-color: #444451;
+  height: 20px;
+  width: 30px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: #6feaf6;
+}
+
+.seat.occupied {
+  background-color: #fff;
+  color: red;
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+}
+
+.door {
+  background-color: #fff;
+  height: 30px;
+  width: 50%;
+  margin: 15px 0;
+  border-radius: 10px;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
+}
+
+.door h2{
+
+  color: rgb(12, 12, 12);
+  text-align: center;
+  
+
+}
+
+p.text {
+  margin: 5px 0;
+}
+
+p.text span {
+  color: #6feaf6;
+}
+
+
+.field input[type="submit"] {
+  background: #6feaf6;
+  border: 1px solid #2691d9;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer; 
+}
+.field input[type="submit"]:hover {
+  background: #2691d9;
+} */ 

@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* *{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+} */
+
+.contact{
+
+    position: relative;
+    min-height: 100vh;
+    /* padding: 50px 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image:linear-gradient(rgba(70, 3, 3, 0.5),rgba(48, 34, 34, 0.5)), url(bg.jpg);
+    background-size: cover;
+
+}
+
+.contact .content{
+
+    max-width: 800px;
+    text-align: center;
+
+}
+
+.contact .content h2 {
+
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.contact .content p {
+
+    font-weight: 300;
+    color: #fff;
+}
+
+.contact-us{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+}
+
+.contact-us .contactInfo{
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact-us .contactInfo .box{
+  
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+
+}
+
+.contact-us .contactInfo .box .icon{
+  
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+
+
+}
+
+.contact-us .contactInfo .box .text{
+
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 500;
+
+}
+
+.contact-us .contactInfo .box .text h3{
+
+    font-weight: 700;
+    color: #00bcd4;
+}
+
+.contactform{
+
+    width: 40%;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.contactform h2{
+
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contactform .inputbox{
+
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    
+
+}
+
+.contactform .inputbox input,.contactform .inputbox textarea{
+
+   width: 100%;
+   padding: 5px 0; 
+   font-size: 16px;
+   margin: 10px 0;
+   border: none;
+   border-bottom: 2px solid #333;
+   outline: none;
+   resize: none;
+
+}
+
+.contactform .inputbox span{
+
+    position: absolute;
+    left: 0;
+    padding: 5px 0; 
+   font-size: 16px;
+   margin: 10px 0;
+   pointer-events: none;
+   transition: 0.5s;
+   color: #666;
+    
+}
+
+.contactform .inputbox input:focus ~span,
+.contactform .inputbox input:valid ~span,
+.contactform .inputbox textarea:focus ~span,
+.contactform .inputbox textarea:valid ~span{
+
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.contactform .inputbox input[type="submit"]{
+
+    width: 100px;
+    background: #00bcd4;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+
+
+}
+
+
+
+/* Mobile Devices */
+@media (max-width: 576px){
+    
+    .contact{
+        padding: 50px;
+    }
+    .contact-us{
+        flex-direction: column;
+    }
+    .contact-us .contactInfo{
+        margin-bottom: 40px;
+    }
+    .contact-us .contactInfo{
+        width: 20vh;
+    }
+    .contactform{
+        width: 80%;    
+    }
+}
+
+
+
+/* Tablet Devices */
+@media (min-width:576px) and (max-width:992px){
+    .contact{
+        padding: 50px;
+    }
+    .contact-us{
+        flex-direction: column;
+    }
+    .contact-us .contactInfo{
+        margin-bottom: 40px;
+    }
+    .contact-us .contactInfo{
+        width: 20vh;
+    }
+    .contactform{
+        width: 80%;    
+    }
+
+}

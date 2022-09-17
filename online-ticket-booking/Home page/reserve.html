@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Your Ticket</title>
+    
+    <!-- css link -->
+    <link rel="stylesheet" href="css/reserve.css">
+    <link rel="stylesheet" href="Css/style.css">
+    <!--BOOTSTRAP LINK-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css
+">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+
+
+    
+    
+
+</head>
+<body>
+
+    <!------------
+    navbar
+  -------------->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light Routes-color">
+        <div class="container ">
+          <a class="navbar-brand fw-bolder fs-3" href="index.html">Online Ticket Booking </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold navit">
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="reserve.html">Booking</a>
+              </li>
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="my-booking.html">My Booking</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Pricing.html">Pricing</a>
+              </li>
+             
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contactus.html">Contact</a>
+              </li>
+                          
+            </ul>
+            <form class="d-flex">
+              <div id="sign_in" >
+                <div class="d-flex">
+                  <button class="btn btn-outline-success " type="submit"><a class="nav-link active register" aria-current="page" href="regland.html">Register</a></button>
+    
+                  <!-- Login work  -->
+                  <button class="btn btn-outline-success mx-2" type="submit"><a class="nav-link active  register" aria-current="page" href="login.html">Login</a></button>
+                </div>
+                 
+                  
+              </div>
+                  <!-- Register work  -->
+          <!-- Register work  -->
+          <div id="signOut" >
+            <div class="d-flex ">
+              <p id="userName" class="user-name"></p>
+            <!-- Login work  -->
+            <button onclick="handleLogOut()" class="logout-btn" type="button"><a class="log-out" aria-current="page">Logout</a></button>
+            </div>
+          </div>
+                </form>
+            
+          </div>
+
+        </div>
+      </nav>
+</header>
+
+
+    <!-- <form class="robin">
+
+        <div class="container signup-form bg-dark">
+
+            <div class="Signup-head color text-center ">
+                <h1>Reserve Your Ticket</h1>
+            </div>
+
+            <div class="signup-content ticket">
+                <input type="radio" class="radio" name="r">
+                <label class="text-white">One Way</label>
+                <input type="radio" class="radio" name="r">
+                <label class="text-white">Return</label>
+            </div>
+
+            <div class="signup-content2">
+                <input type="text" placeholder="From" class="input bg-dark">
+                <input type="text" placeholder="To" class="input bg-dark"><br>
+            
+
+            <label class="text-white" style="margin-left:10px;">Depart</label>
+            <input type="date" class="tarikh bg-dark text-white">
+            <label class="text-white" style="margin-left:10px;">Return</label>
+            <input type="date" class="tarikh bg-dark">
+
+            <input type="number" class="bg-dark person" placeholder="Adults">
+            <input type="number" class="bg-dark person" placeholder="Children"><br>
+
+            <label class="text-white travel">Travel Class</label>
+            <select class="bg-dark text-white travel2">
+                <option></option>
+                <option>First Class/1A</option>
+                <option>AC 2tier/2A</option>
+                <option>AC 3tier/3A</option>
+                <option>Executive class chair car/Economy Class</option>
+                <option>AC Chair Car</option>
+                <option>Sleeper Class</option>
+                <option>Second Class</option>
+                <option>General</option>
+            </select>
+
+            <div class="text-center">
+                <input type="submit" value="Check Availability" class="submit-btn color ">
+            </div>
+        </div>
+        </div>
+    </form> -->
+
+    <!----------------------------------------------------------footer---------------------------------------------------------------------->
+
+    <main>
+        <div class="Container">
+          <div class="container">
+            <div class="row d-flex justify-content-center align-items-center py-5">
+<div class="col-6">
+  <form>
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="from">From</label>
+
+        <input
+          list="fromList"
+          id="from"
+          placeholder="From Station"
+          class="form-control"
+        />
+        <datalist id="fromList"> </datalist>
+      </div>
+      <div class="form-group col-6">
+        <label for="to">To</label>
+        <input
+          list="toList"
+          id="to"
+          placeholder="From Station"
+          class="form-control"
+        />
+        <datalist id="toList"> </datalist>
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="form-group col-6">
+        <label for="date">Date of Journey</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          placeholder="00-00-0000"
+        />
+      </div>
+
+      <div class="form-group col-6">
+        <label for="class">Choose Class</label>
+        <select
+          id="class"
+          class="form-select"
+          aria-label="Default select example"
+          for="class"
+        >
+          <option selected hidden>Choose a class</option>
+
+          <option value="First Class/1A">First Class/1A</option>
+          <option value="AC 2tier/2A">AC 2tier/2A</option>
+          <option value="AC 3tier/3A">AC 3tier/3A</option>
+          <option value="Executive class chair car/Economy Class">Executive class chair car/Economy Class</option>
+          <option value="AC Chair Car">AC Chair Car</option>
+          <option value="Sleeper Class">Sleeper Class</option>
+          <option value="Second Class">Second Class</option>
+          <option value="General">General</option>
+        </select>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <button
+        type="button"
+        class="btn btn-success mt-5 col-8"
+        onclick="handleSearchTrain()"
+      >
+        Search Train
+      </button>
+    </div>
+  </form>
+</div>
+<div class="col-6">
+  <img
+    src="https://d19qjkjk65tfln.cloudfront.net/v2/assets/img/home/train-illustration-for-train-1.jpg"
+    class="responsive"
+    alt=""
+  />
+</div>
+</div>
+          </div>
+            <footer class="">
+                <div class="footer">
+                    <span class="Influencer">Online Ticket Booking </span> <br> <a href="https://www.codingnepalweb.com
+">Copyright </a><span class="far fa-copyright"></span>  2022  Online Ticket Booking <br>
+                    <span>All rights reserved</span><br>
+                    <div class="footer-icon">
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-youtube-square"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="get-app">
+                      <h5>Get The App</h3>
+                        <div>
+                          <a href="">
+                            <img src="images/App-logo/App Store Badge.png" alt="">
+                            <img src="images/App-logo/Google play.png" alt="">
+                          </a>
+                        </div>
+                    </div>
+                </div>
+            </footer> 
+        </div>
+    </main> 
+    <!-----------------------------------------------------footerDone----------------------------------------------------->
+
+
+
+
+    <!-- js link  -->
+    <script src="./Js/reserve.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

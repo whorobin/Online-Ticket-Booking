@@ -29,6 +29,7 @@ const displayData = (data) => {
     table_container.innerHTML += `<tr>
       <th scope="row">${idx + 1}</th>
       <td>${item.date}</td>
+      <td>${item.time}</td>
       <td>${item.name}</td>
       <td>${item.email}</td>
       <td>${item.from}</td>

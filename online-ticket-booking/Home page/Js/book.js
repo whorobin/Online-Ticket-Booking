@@ -7,7 +7,7 @@ let from;
 let to;
 let date;
 let selectedClass;
-
+let selectedTime;
 const totalPriceCalculation = () => {
   if (trainName === "Padma / Silk City (Dhaka to Rajshahi) (tk 300)") {
     totalPrice = selectedSeat.length * 300;
@@ -15,16 +15,11 @@ const totalPriceCalculation = () => {
     totalPrice = selectedSeat.length * 400;
   } else if (trainName === "Sirajganj Express (tk 250)") {
     totalPrice = selectedSeat.length * 250;
-  } 
-  else if (trainName === "Turna Express (Dhaka to Chattogram) (tk 750)") {
+  } else if (trainName === "Turna Express (Dhaka to Chattogram) (tk 750)") {
     totalPrice = selectedSeat.length * 750;
-  } 
-
-  else if (trainName === "Panchagarh Express (tk 550)") {
+  } else if (trainName === "Panchagarh Express (tk 550)") {
     totalPrice = selectedSeat.length * 550;
-  } 
-
-  else {
+  } else {
     totalPrice = selectedSeat.length * 300;
   }
 };
@@ -81,6 +76,7 @@ const handleSeatBook = async () => {
       class: selectedClass,
       name: user.name,
       email: user.email,
+      time: selectedTime,
       created: datetime,
     };
     return convertObj;
@@ -96,6 +92,8 @@ const handleSeatBook = async () => {
     seat: selectedSeat,
     coach: coachName,
     total_price: totalPrice,
+    time: selectedTime,
+    created: datetime,
   };
 
   try {
@@ -244,8 +242,9 @@ const ValidCheck = async () => {
   to = await qs["to"];
   date = await qs["date"];
   selectedClass = await qs["class"];
+  selectedTime = await qs["time"];
 
-  if (!from || !to || !date || !selectedClass) {
+  if (!from || !to || !date || !selectedClass || !selectedTime) {
     window.history.pushState("", "", "/reserve.html");
     location.reload();
   }

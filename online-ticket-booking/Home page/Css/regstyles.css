@@ -6,6 +6,14 @@
   font-family: 'Poppins',sans-serif;
 }
 
+form .button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  margin: 35px 0
+}
+
 .color{
      background-color: #afaeae;
      margin-top: 10px;

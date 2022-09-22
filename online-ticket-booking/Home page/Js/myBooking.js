@@ -36,10 +36,12 @@ const displayData = (data) => {
       seat,
       total_price,
       train_name,
+      time,
     } = item;
     table_container.innerHTML += `<tr>
     <th scope="row">${idx + 1}</th>
     <td>${date}</td>
+    <td> ${time}</td>
     <td>${name}</td>
     <td>${email}</td>
     <td>${from}</td>

@@ -1,4 +1,16 @@
-const countryList = ["Dhaka", "Airport", "B Baria", "Chattagong", "Rajshahi", "Rangpur", "Thakurgan", "Panchagarh", "Sirajganj", "Khulna" ];
+const countryList = [
+  "Dhaka",
+  "Airport",
+  "B Baria",
+  "Chattagong",
+  "Rajshahi",
+  "Rangpur",
+  "Thakurgan",
+  "Panchagarh",
+  "Sirajganj",
+  "Khulna",
+  "Faridpur",
+];
 document.querySelector("#from").addEventListener("input", (e) => {
   const inputField = e.target.value;
   const countryOtion = document.getElementById("fromList");
@@ -58,6 +70,14 @@ const handleSearchTrain = async () => {
     alert("select class");
     return;
   }
+
+  const selectedTime = getInputValue("time");
+  console.log("selected time ", selectedTime);
+  const selectedTimeValid = selectedTime ? true : false;
+  if (!selectedTimeValid) {
+    alert("select time");
+    return;
+  }
   var pageUrl =
     "/book.html" +
     "?" +
@@ -71,12 +91,15 @@ const handleSearchTrain = async () => {
     selectedDate +
     "&" +
     "class=" +
-    selectedClass;
+    selectedClass +
+    "&" +
+    "time=" +
+    selectedTime;
   window.history.pushState("", "", pageUrl);
 
   location.reload();
 };
-const getUserInfo = () => {
+const getUserInformation = () => {
   const userInfo = localStorage.getItem("user");
   const user = JSON.parse(userInfo);
   console.log("user :", user);
@@ -85,7 +108,7 @@ const getUserInfo = () => {
     location.reload();
   }
 };
-getUserInfo();
+getUserInformation();
 
 // const handleBooking = async () => {
 //   const data = {

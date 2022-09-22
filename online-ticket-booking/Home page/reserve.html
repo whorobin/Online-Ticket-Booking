@@ -38,12 +38,16 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
-              
+
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="reserve.html">Booking</a>
               </li>
 
               
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="admin.html">Admin</a>
+              </li>
 
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="my-booking.html">My Booking</a>
@@ -71,7 +75,6 @@
                   
               </div>
                   <!-- Register work  -->
-          <!-- Register work  -->
           <div id="signOut" >
             <div class="d-flex ">
               <p id="userName" class="user-name"></p>
@@ -86,6 +89,29 @@
         </div>
       </nav>
 </header>
+<script>
+  const getUserInfo = () => {
+  const userInfo = localStorage.getItem("user");
+  const user = JSON.parse(userInfo);
+  console.log("user :", user);
+  if (user) {
+    document.getElementById("signOut").style.display = "block";
+    document.getElementById("sign_in").style.display = "none";
+    document.getElementById("userName").innerText = user.name;
+  } else {
+    document.getElementById("sign_in").style.display = "block";
+    document.getElementById("signOut").style.display = "none";
+  }
+};
+getUserInfo();
+
+const handleLogOut = () => {
+  localStorage.removeItem("user");
+  document.getElementById("signOut").style.display = "none";
+  document.getElementById("sign_in").style.display = "block";
+};
+
+</script>
 
 
     <!-- <form class="robin">

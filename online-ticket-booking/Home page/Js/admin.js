@@ -1,6 +1,10 @@
 var data;
 
 const displayData = (data) => {
+  console.log(data.length)
+
+  document.getElementById("total-books").innerText=data.length;
+  
   const table_container = document.getElementById("table_container");
   const arrayRev = data
     .map(function iterateItems(item) {
